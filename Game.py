@@ -13,8 +13,8 @@ sys.path.insert(0, 'Classes')
 from BirdClass import *
 from PipeClass import *
 
-WIDTH = 600
-HEIGHT = 600
+WIDTH = 300
+HEIGHT = 500
 FPS = 30
 
 BLACK = (0, 0, 0)
@@ -27,15 +27,19 @@ pygame.display.set_caption("Flappy Snake")
 
 clock = pygame.time.Clock()
 
+#~~~~~~~ Sprites Init ~~~~~~~#
 pipes = pygame.sprite.Group()
 allSprites = pygame.sprite.Group()
 
-pipe = Pipe(WIDTH, HEIGHT)
+pipe1 = Pipe(WIDTH, HEIGHT, "TOP")
+pipe2 = Pipe(WIDTH, HEIGHT, "BOTTOM")
 
-pipes.add(pipe)
-allSprites.add(pipe)
+pipes.add(pipe1, pipe2)
+allSprites.add(pipe1, pipe2)
 
+#~~~~~~~~~ Functions ~~~~~~~~#
 
+#~~~~~~ Main Game Loop ~~~~~~#
 running = True
 while (running):
     clock.tick(FPS)
