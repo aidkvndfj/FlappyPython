@@ -15,3 +15,6 @@ class Bird(pygame.sprite.Sprite):
     def update(self):
         self.vely += self.gravity
         self.rect.centery += self.vely
+
+    def jump(self):
+        self.vely = -10

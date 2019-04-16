@@ -1,4 +1,5 @@
 import pygame
+import math
 import random
 
 GREEN = (0, 255, 0)
@@ -12,7 +13,7 @@ class Pipe(pygame.sprite.Sprite):
         if (self.type == "MASTER"):
             self.image = pygame.Surface((60, random.randint(50, 450)))
         if (self.type == "FOLLOWER"):
-            self.image = pygame.Surface((60, HEIGHT - topPos))
+            self.image = pygame.Surface((60, math.ceil(HEIGHT - topPos)))
 
         self.image.fill(GREEN)
         self.rect = self.image.get_rect()
