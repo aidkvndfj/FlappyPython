@@ -55,7 +55,7 @@ running = True
 while (running):
     clock.tick(FPS)
 
-    if (bird.rect.bottom < -50 or bird.rect.top > HEIGHT):
+    if (bird.rect.bottom < -50 or bird.rect.top > HEIGHT or pygame.sprite.spritecollide(bird, pipes, False)):
         running = False
 
     if (pipe.rect.centerx < WIDTH / 2 and secondSpawn == False):
