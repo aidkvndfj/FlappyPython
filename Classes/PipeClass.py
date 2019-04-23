@@ -2,7 +2,7 @@ import pygame
 import math
 import random
 
-GREEN = (0, 255, 0)
+GREEN = (40, 155, 25)
 
 class Pipe(pygame.sprite.Sprite):
     def __init__(self, WIDTH, HEIGHT, type, topPos):
